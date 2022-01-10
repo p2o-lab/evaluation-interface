@@ -4,7 +4,10 @@
   "version": "0.0.1-alpha01",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "git@github.com:p2o-lab/evaluation-interface.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:p2o-lab/evaluation-interface.git"
+  },
   "homepage": "https://github.com/p2o-lab/evaluation-interface",
   "license": "MIT",
   "scripts": {
@@ -28,5 +31,8 @@
   "contributors": [
     "Julius Lorenz <julius.lorenz@tu-dresden.de>",
     "Tuan Son Dinh <tuansondinh96@gmail.com"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/p2o-lab/evaluation-interface/issues"
+  }
 }

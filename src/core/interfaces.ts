@@ -14,7 +14,7 @@ export interface PEAViewModel {
 export interface TopologyObject {
   id: string;
   type: string;
-  objectReference?: string | undefined
+  objectReference?: string | undefined;
 }
 
 export interface AlarmItem {

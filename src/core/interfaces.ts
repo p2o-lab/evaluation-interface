@@ -1,4 +1,5 @@
-export interface PEAViewModelInterface {
+// TODO: Will be something like PEAOptions or PEAInfo in future
+export interface PEAViewModel {
   peaId: string;
   name: string;
   connected: boolean;
@@ -6,18 +7,17 @@ export interface PEAViewModelInterface {
   alarmMessage: string;
   type: string;
   description: string;
-  parametersIn: ParameterInterface[];
-  parametersOut: ParameterInterface[];
+  parametersIn: ParameterViewModel[];
+  parametersOut: ParameterViewModel[];
 }
 
-export interface PEAHolderInterface {
+export interface TopologyObject {
   id: string;
-  peaId: string;
   type: string;
-  occupied: boolean;
+  objectReference?: string | undefined
 }
 
-export interface AlarmItemInterface {
+export interface AlarmItem {
   position?: number;
   timestamp: Date;
   message: string;
@@ -26,7 +26,7 @@ export interface AlarmItemInterface {
   name: string;
 }
 
-export interface PlantInfoInterface {
+export interface PlantInfo {
   scenarioRunning: boolean;
   recipeRunning: boolean;
   plantCleaned: boolean;
@@ -42,7 +42,7 @@ export enum Status {
   Malfunction = 'Malfunction',
 }
 
-export interface ParameterInterface {
+export interface ParameterViewModel {
   name: string;
   value?: number | string | boolean;
   requestedValue?: string;

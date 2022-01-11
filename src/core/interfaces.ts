@@ -1,11 +1,13 @@
 // TODO: Will be something like PEAOptions or PEAInfo in future
+import {PEAState, PEAType} from './enums';
+
 export interface PEAViewModel {
   peaId: string;
   name: string;
   connected: boolean;
-  status: Status;
+  status: PEAState;
   alarmMessage: string;
-  type: string;
+  type: PEAType;
   description: string;
   parametersIn: ParameterViewModel[];
   parametersOut: ParameterViewModel[];
@@ -31,15 +33,6 @@ export interface PlantInfo {
   recipeRunning: boolean;
   plantCleaned: boolean;
   currentScenario: string;
-}
-
-export enum Status {
-  None = 'No Status available',
-  Normal = 'Normal',
-  PreWarning = 'PreWarning',
-  Warning = 'Warning',
-  Alert = 'Alert',
-  Malfunction = 'Malfunction',
 }
 
 export interface ParameterViewModel {

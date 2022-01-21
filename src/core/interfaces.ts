@@ -13,12 +13,6 @@ export interface PEAViewModel {
   parametersOut: ParameterViewModel[];
 }
 
-export interface TopologyObject {
-  id: string;
-  type: string;
-  objectReference?: string | undefined;
-}
-
 export interface AlarmItem {
   position?: number;
   timestamp: Date;

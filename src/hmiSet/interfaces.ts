@@ -49,22 +49,26 @@ export interface Sink extends TopologyObject{
 
 export interface Connection extends objectWithIdentity{
   edgePath: Point[];
+  type: string;
 }
 
 export interface FunctionLine extends Connection{
   start: LogicalPort;
   end: LogicalPort;
+  type: 'Function';
 }
 
 export interface MeasurementLine extends Connection{
   start: MeasurementPoint;
   end: MeasurementPoint;
+  type: 'Measurement';
 }
 
 export interface Pipe extends Connection{
   directed: boolean;
   nozzle1: Nozzle;
   nozzle2: Nozzle;
+  type: 'Pipe';
 }
 
 

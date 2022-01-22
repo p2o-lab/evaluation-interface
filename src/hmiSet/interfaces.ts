@@ -34,17 +34,14 @@ export interface Junction extends TopologyObject{
 
 export interface Termination extends TopologyObject{
   type: 'Termination';
-  referencedObjects: string;
 }
 
 export interface Source extends TopologyObject{
   type: 'Source';
-  instanceReference: string;
 }
 
 export interface Sink extends TopologyObject{
   type: 'Sink';
-  instanceReference: string;
 }
 
 export interface Connection extends objectWithIdentity{
@@ -77,12 +74,11 @@ export interface VisualObject extends objectWithIdentity{
   position?: Point;
   zIndex?: number;
   rotation?: number;
-  // TODO: not contained in standard?
   viewType?: string;
   eClassProperties?: EClassProperties;
   ports?: Port[];
   type: string;
-  instanceReference: string;
+  instanceReference?: string;
 }
 
 export interface EClassProperties{

@@ -94,6 +94,7 @@ export interface EClassProperties{
 export interface Port extends objectWithIdentity{
   x?: number;
   y?: number;
+  direction: 'In' | 'Out' | 'BiDirectional';
   type: string;
 }
 

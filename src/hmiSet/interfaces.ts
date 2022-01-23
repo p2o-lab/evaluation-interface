@@ -10,7 +10,8 @@ export interface HMIView extends objectWithIdentity{
 }
 
 export interface Picture extends objectWithIdentity{
-  dimensions?: Dimension;
+  width?: number;
+  height?: number;
   hierarchyLevel?: string;
   topologyObjects?: TopologyObject[];
   visualObjects?: VisualObject[];
@@ -23,7 +24,8 @@ export interface SemanticGroup extends objectWithIdentity{
 }
 
 export interface TopologyObject extends objectWithIdentity{
-  position: Point;
+  x?: number;
+  y?: number;
   ports?: Port[];
   type: string;
 }
@@ -45,7 +47,7 @@ export interface Sink extends TopologyObject{
 }
 
 export interface Connection extends objectWithIdentity{
-  edgePath: Point[];
+  edgePath: Array<{x: number; y: number}>;
   type: string;
 }
 
@@ -70,8 +72,10 @@ export interface Pipe extends Connection{
 
 
 export interface VisualObject extends objectWithIdentity{
-  dimensions?: Dimension;
-  position?: Point;
+  width?: number;
+  height?: number;
+  x?: number;
+  y?: number;
   zIndex?: number;
   rotation?: number;
   viewType?: string;
@@ -87,13 +91,9 @@ export interface EClassProperties{
   eClassIRDI: string;
 }
 
-export interface Dimension{
-  width: number;
-  height: number;
-}
-
 export interface Port extends objectWithIdentity{
-  position: Point;
+  x?: number;
+  y?: number;
   type: string;
 }
 
@@ -107,9 +107,4 @@ export interface MeasurementPoint extends Port{
 
 export interface Nozzle extends Port{
   type: 'Nozzle';
-}
-
-export interface Point {
-  x: number;
-  y: number;
 }

@@ -30,13 +30,13 @@ export interface PlantInfo {
 }
 
 export interface ParameterViewModel {
-  name: string;
+  id: string;
+  name?: string;
   value?: number | string | boolean;
   requestedValue?: string;
   min?: number;
   max?: number;
   unit?: string;
-  readonly?: boolean;
   type?: string;
   timestamp?: Date;
 }

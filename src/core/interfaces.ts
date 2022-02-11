@@ -1,4 +1,4 @@
-// TODO: Will be something like PEAOptions or PEAInfo in future
+import {AlarmList} from '../alarming/interfaces';
 import {PEAState, PEAType} from './enums';
 
 export interface PEAViewModel {
@@ -6,20 +6,11 @@ export interface PEAViewModel {
   name: string;
   connected: boolean;
   status: PEAState;
-  alarmMessage: string;
+  alarms: AlarmList;
   type: PEAType;
-  description: string;
+  description?: string;
   parametersIn: ParameterViewModel[];
   parametersOut: ParameterViewModel[];
-}
-
-export interface AlarmItem {
-  position?: number;
-  timestamp: Date;
-  message: string;
-  id: string;
-  status: string;
-  name: string;
 }
 
 export interface PlantInfo {

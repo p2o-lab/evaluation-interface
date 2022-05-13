@@ -1,4 +1,5 @@
 import {AlarmList} from '../alarming/interfaces';
+import {ProcessFunction} from '../types/enums';
 import {PEAState} from './enums';
 
 export interface PEAViewModel {
@@ -6,11 +7,12 @@ export interface PEAViewModel {
   name: string;
   connected: boolean;
   status: PEAState;
-  alarms: AlarmList;
-  typeReference: string;
+  alarms?: AlarmList;
+  typeReference?: string;
+  processFunctions?: ProcessFunction[];
   description?: string;
-  parametersIn: ParameterViewModel[];
-  parametersOut: ParameterViewModel[];
+  parametersIn?: ParameterViewModel[];
+  parametersOut?: ParameterViewModel[];
 }
 
 export interface PlantInfo {

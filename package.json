@@ -1,9 +1,9 @@
 {
   "name": "@p2olab/evaluation-interface",
   "description": "interface definitions for evaluation-backend",
-  "version": "0.0.1-alpha.15",
+  "version": "0.0.1-alpha.16",
   "main": "index.js",
-  "types": "index.d.ts",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:p2o-lab/evaluation-interface.git"

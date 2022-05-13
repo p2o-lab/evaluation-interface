@@ -1,9 +1,9 @@
 {
   "name": "@p2olab/evaluation-interface",
   "description": "interface definitions for evaluation-backend",
-  "version": "0.0.1-alpha.14",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "version": "0.0.1-alpha.15",
+  "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:p2o-lab/evaluation-interface.git"
@@ -13,6 +13,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "eslint -c .eslintrc.js --ext .ts src",
+    "fixLinting": "npm run lint -- --fix",
     "prepare": "npm run lint && npm run build",
     "postversion": "npm publish"
   },

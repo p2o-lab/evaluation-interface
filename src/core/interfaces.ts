@@ -1,5 +1,5 @@
 import {AlarmList} from '../alarming/interfaces';
-import {PEAState, PEAType} from './enums';
+import {PEAState} from './enums';
 
 export interface PEAViewModel {
   peaId: string;
@@ -7,7 +7,7 @@ export interface PEAViewModel {
   connected: boolean;
   status: PEAState;
   alarms: AlarmList;
-  type: PEAType;
+  typeReference: string;
   description?: string;
   parametersIn: ParameterViewModel[];
   parametersOut: ParameterViewModel[];
@@ -30,4 +30,33 @@ export interface ParameterViewModel {
   unit?: string;
   type?: string;
   timestamp?: Date;
+}
+
+export interface PEAOptions{
+  id: string;
+  name: string;
+  description: string;
+  type?: string;
+  portOptions: PEAPortOptions[];
+  specificAttributes: PEAAttributeOptions[];
+}
+
+export interface PEAPortOptions {
+  name: string;
+  type: string;
+  direction?: 'In' | 'Out' | 'BiDirectional';
+}
+
+export interface PEAAttributeOptions {
+  name: string;
+  value: number;
+  unit?: string;
+  limits?: LimitOptions;
+}
+
+export interface LimitOptions {
+  toleranceLow: number;
+  toleranceHigh: number;
+  alarmLow: number;
+  alarmHigh: number;
 }

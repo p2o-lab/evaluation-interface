@@ -1,13 +1,13 @@
-import {AlarmList} from '../alarming/interfaces';
+import {AlarmType} from '../alarming/enums';
+import {AlarmHistory} from '../alarming/interfaces';
 import {ProcessFunction} from '../types/enums';
-import {PEAState} from './enums';
 
 export interface PEAViewModel {
   peaId: string;
   name: string;
   connected: boolean;
-  status: PEAState;
-  alarms?: AlarmList;
+  status: AlarmType;
+  alarms?: AlarmHistory;
   typeReference?: string;
   processFunctions?: ProcessFunction[];
   description?: string;

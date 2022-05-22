@@ -1,4 +1,4 @@
-import {AlarmList} from '../alarming/interfaces';
+import {AlarmHistory} from '../alarming/interfaces';
 import {Catalog} from '../catalog/interfaces';
 import {ParameterViewModel, PEAViewModel} from './interfaces';
 
@@ -20,7 +20,7 @@ export type EvaluationBackendNotification =
   } |
   {
     message: 'alarm';
-    alarms: AlarmList;
+    alarms: AlarmHistory;
   } |
   {
     message: 'topology changed';

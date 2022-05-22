@@ -1,15 +1,15 @@
-import {AlarmDirection, AlarmPriority} from './enums';
+import {AlarmDirection, AlarmPriority, AlarmType} from './enums';
 
-export interface AlarmList {
-  items: AlarmItem[];
+export interface AlarmHistory {
+  items: AlarmMessage[];
 }
 
-export interface AlarmItem {
-  origin: string;
+export interface AlarmMessage {
+  originReference: string;
   timestamp: Date;
   message: string;
   id: string;
-  type: string;
+  type: AlarmType;
   direction: AlarmDirection;
   priority: AlarmPriority;
   toBeAcknowledged: boolean;

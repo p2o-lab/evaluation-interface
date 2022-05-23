@@ -3,7 +3,7 @@ import {AlarmHistory} from '../alarming/interfaces';
 import {ProcessFunction} from '../types/enums';
 
 export interface PEAViewModel {
-  peaId: string;
+  id: string;
   name: string;
   connected: boolean;
   status: AlarmType;

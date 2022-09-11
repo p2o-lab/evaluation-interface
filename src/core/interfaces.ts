@@ -1,6 +1,7 @@
 import {AlarmType} from '../alarming/enums';
 import {AlarmHistory} from '../alarming/interfaces';
 import {ProcessFunction} from '../types/enums';
+import {PEAAttributeOptions, PEAPortOptions} from './options';
 
 export interface PEAViewModel {
   id: string;
@@ -41,24 +42,4 @@ export interface PEAOptions{
   type?: string;
   portOptions: PEAPortOptions[];
   specificAttributes: PEAAttributeOptions[];
-}
-
-export interface PEAPortOptions {
-  name: string;
-  type: string;
-  direction?: 'In' | 'Out' | 'BiDirectional';
-}
-
-export interface PEAAttributeOptions {
-  name: string;
-  value: number;
-  unit?: string;
-  limits?: LimitOptions;
-}
-
-export interface LimitOptions {
-  toleranceLow: number;
-  toleranceHigh: number;
-  alarmLow: number;
-  alarmHigh: number;
 }

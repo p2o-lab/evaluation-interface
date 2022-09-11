@@ -1,4 +1,4 @@
-import {PlantTopologyObjectType} from './enum';
+import {PlantTopologyObjectType} from './enums';
 
 export interface PlantTopology {
   id: string;

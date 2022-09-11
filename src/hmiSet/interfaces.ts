@@ -1,3 +1,5 @@
+import {Direction} from '../core';
+import {PortType, TopologyConnectionType, TopologyObjectType} from './enums';
 
 export interface objectWithIdentity{
   id: string;
@@ -27,49 +29,48 @@ export interface TopologyObject extends objectWithIdentity{
   x?: number;
   y?: number;
   ports?: Port[];
-  type: string;
+  type: TopologyObjectType;
 }
 
 export interface Junction extends TopologyObject{
-  type: 'Junction';
+  type: TopologyObjectType.Junction;
 }
 
 export interface Termination extends TopologyObject{
-  type: 'Termination';
+  type: TopologyObjectType.Termination;
 }
 
 export interface Source extends TopologyObject{
-  type: 'Source';
+  type: TopologyObjectType.Source;
 }
 
 export interface Sink extends TopologyObject{
-  type: 'Sink';
+  type: TopologyObjectType.Sink;
 }
 
 export interface Connection extends objectWithIdentity{
   edgePath: Array<{x: number; y: number}>;
-  type: string;
+  type: TopologyConnectionType;
 }
 
 export interface FunctionLine extends Connection{
   start: LogicalPort;
   end: LogicalPort;
-  type: 'Function';
+  type: TopologyConnectionType.Function;
 }
 
 export interface MeasurementLine extends Connection{
   start: MeasurementPoint;
   end: MeasurementPoint;
-  type: 'Measurement';
+  type: TopologyConnectionType.Measurement;
 }
 
 export interface Pipe extends Connection{
   directed: boolean;
   nozzle1: Nozzle;
   nozzle2: Nozzle;
-  type: 'Pipe';
+  type: TopologyConnectionType.Pipe;
 }
-
 
 export interface VisualObject extends objectWithIdentity{
   width?: number;
@@ -94,18 +95,18 @@ export interface EClassProperties{
 export interface Port extends objectWithIdentity{
   x?: number;
   y?: number;
-  direction: 'In' | 'Out' | 'BiDirectional';
-  type: string;
+  direction: Direction;
+  type: PortType;
 }
 
 export interface LogicalPort extends Port{
-  type: 'Logic';
+  type: PortType.Logic;
 }
 
 export interface MeasurementPoint extends Port{
-  type: 'Measurement';
+  type: PortType.Measurement;
 }
 
 export interface Nozzle extends Port{
-  type: 'Nozzle';
+  type: PortType.Nozzle;
 }

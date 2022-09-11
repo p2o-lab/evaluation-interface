@@ -1,4 +1,4 @@
-import {OccupationStatus} from './enum';
+import {OccupationStatus} from './enums';
 
 export interface Catalog {
   items: PeaCatalogItem[];

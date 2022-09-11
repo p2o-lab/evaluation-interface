@@ -10,9 +10,3 @@ export enum PlantTopologyObjectPropertyType {
   Outlets,
   Type
 }
-
-export enum PlantTopologyObjectNozzleType {
-  In,
-  Out,
-  BiDirectional
-}

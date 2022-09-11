@@ -1,13 +1,13 @@
 import {PlantTopologyObjectType} from './enums';
 
-export interface PlantTopology {
+export interface PlantTopologyInfo {
   id: string;
   name?: string;
   description?: string;
   author?: string;
   dateOfCreation: Date;
-  objects: PlantTopologyObject[];
-  connections: PlantTopologyConnection[];
+  objects: PlantTopologyObjectInfo[];
+  connections: PlantTopologyConnectionInfo[];
 }
 
 export interface PlantTopologyObjectProperty {
@@ -17,7 +17,7 @@ export interface PlantTopologyObjectProperty {
   value: string | number;
 }
 
-export interface PlantTopologyObject {
+export interface PlantTopologyObjectInfo {
   id: string;
   name?: string;
   description?: string;
@@ -26,7 +26,7 @@ export interface PlantTopologyObject {
   instanceReference?: string;
 }
 
-export interface PlantTopologyConnection {
+export interface PlantTopologyConnectionInfo {
   name: string;
   id: string;
   directed: boolean;
